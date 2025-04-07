@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="text-[1.75rem]">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./style.css" rel="stylesheet">
+  
+  <style>
+    /* Add perspective for the 3D effect */
+    .perspective {
+      perspective: 1000px;
+    }
+
+    /* Rotate the card on hover */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Smooth transition for the flip effect */
+    .flip-card-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    /* Front and back faces of the card */
+    .flip-card-front,
+    .flip-card-back {
+      backface-visibility: hidden;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+
+</head>
+
+<body class="bg-gray-900 flex flex-col items-center justify-center min-h-screen">
+  <!-- Home Button with Image -->
+  <a href="index.html" class="absolute top-6 left-6 z-20">
+    <img src="../src/Ninja.jpg" alt="Home" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-lg hover:opacity-80">
+  </a>
+
+  <!-- Fixed Navigation Bar -->
+  <nav class="bg-gray-800 text-white p-4 sm:p-6 w-full fixed top-0 left-0 shadow-lg z-10">
+    <div class="flex justify-center space-x-6 sm:space-x-10 text-lg sm:text-xl">
+      <a href="index.html" class="hover:text-blue-400 hover:underline">Home</a>
+      <a href="about.html" class="hover:text-blue-400 hover:underline">About</a>
+      <a href="services.html" class="hover:text-blue-400 hover:underline">Services</a>
+      <a href="contact.html" class="hover:text-blue-400 hover:underline">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Flip Card -->
+  <div class="perspective w-72 h-88 sm:w-80 sm:h-96 mt-16 sm:mt-24">
+    <div class="flip-card relative w-full h-full">
+      <div class="flip-card-inner relative w-full h-full">
+        <!-- Front of the card -->
+        <div class="flip-card-front absolute w-full h-full bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+          <img class="w-full h-full object-cover" src="../src/Ninja.jpg" alt="Ninja Image">
+        </div>
+        <!-- Back of the card -->
+        <div class="flip-card-back absolute w-full h-full bg-gray-800 rounded-lg shadow-lg flex flex-col items-center justify-center text-white">
+          <h2 class="text-xl sm:text-2xl font-bold mb-4">Tailwind CSS Magic</h2>
+          <p class="text-gray-400 mb-4 text-center px-4 text-base sm:text-lg">
+            Hover to flip! This card demonstrates a 3D flip effect using Tailwind CSS and custom styles.
+          </p>
+          <button class="px-4 py-2 sm:px-6 sm:py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
